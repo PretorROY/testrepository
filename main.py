@@ -1,28 +1,16 @@
-import tkinter as tk
-from PIL import Image, ImageTk
+from datetime import datetime
+import pytz
 
+timezones = ['Europe/Moscow', 'Europe/London', 'Asia/Tokyo']
 
-root = tk.Tk()
-root.title("Экзамен УБСТ 2102")
-root.geometry("1920x1080")
+# Получение текущего времени
+now = datetime.now()
 
-# Указываем путь к изображению
-image_path = r"C:\\Users\\sunri\\Desktop\\Screenshot_2.png"
+# Вывод текущей даты и времени для каждого часового пояса
+for tz in timezones:
+    tz_obj = pytz.timezone(tz)
+    tz_time = now.astimezone(tz_obj)
 
-# Загружаем изображение и создаем из него объект PhotoImage
-image = Image.open(image_path)
-photo = ImageTk.PhotoImage(image)
-
-# Создаем метку для изображения и размещаем ее в окне
-background_label = tk.Label(root, image=photo)
-background_label.place(x=0, y=0, relwidth=1, relheight=1)
-
-# Создаем метку с текстом и настраиваем ее свойства
-label = tk.Label(root,
-                 text="экзамен убст 2102",
-                 fg="red",
-                 font=("Helvetica", 24))
-label.place(relx=0.5, rely=0.5, anchor='center')
-
-root.mainloop()
-# Работа завершена.
+    # Вывод времени в каждом часовом поясе
+    formatted_time = tz_time.strftime("%Y-%m-%d %H:%M:%S")
+    print(f'Время в часовом поясе {tz}: {formatted_time}')
