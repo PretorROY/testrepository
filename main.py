@@ -6,7 +6,7 @@ root.title("Экзамен УБСТ 2102")
 root.geometry("1920x1080")
 
 # Указываем путь к изображению
-image_path = r"C:\Users\sunri\Desktop\Screenshot_2.png"
+image_path = r"C:\\Users\\sunri\\Desktop\\Screenshot_2.png"
 
 # Загружаем изображение и создаем из него объект PhotoImage
 image = Image.open(image_path)
