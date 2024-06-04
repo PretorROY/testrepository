@@ -1,6 +1,7 @@
 import tkinter as tk
 from PIL import Image, ImageTk
 
+
 root = tk.Tk()
 root.title("Экзамен УБСТ 2102")
 root.geometry("1920x1080")
@@ -17,7 +18,11 @@ background_label = tk.Label(root, image=photo)
 background_label.place(x=0, y=0, relwidth=1, relheight=1)
 
 # Создаем метку с текстом и настраиваем ее свойства
-label = tk.Label(root, text="экзамен убст 2102", fg="red", font=("Helvetica", 24))
+label = tk.Label(root,
+                 text="экзамен убст 2102",
+                 fg="red",
+                 font=("Helvetica", 24))
 label.place(relx=0.5, rely=0.5, anchor='center')
 
 root.mainloop()
+# Работа завершена.
